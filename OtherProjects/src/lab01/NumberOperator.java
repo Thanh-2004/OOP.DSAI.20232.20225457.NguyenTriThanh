@@ -1,4 +1,4 @@
-package buoi1;
+package lab01;
 import java.util.Scanner;
 
 public class NumberOperator {
@@ -7,6 +7,7 @@ public class NumberOperator {
 		double num = inp.nextDouble();
 		
 		return (num);
+		
 	}
 	
 	public static double Sum(double num1, double num2) {

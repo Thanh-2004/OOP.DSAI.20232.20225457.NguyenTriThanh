@@ -1,4 +1,4 @@
-package buoi1;
+package lab01;
 import java.util.Scanner;
 
 public class EquationSolver {
