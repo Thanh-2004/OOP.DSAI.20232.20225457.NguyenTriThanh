@@ -46,4 +46,15 @@ public abstract class Media {
 	public String toString() {
 		return "Media - "  + this.getId() + " - " + this.getTitle() + " - " + this.getCategory() + " - "  + this.getCost() + " $";
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (obj == null || this.getClass() != obj.getClass()) {
+			return false;
+		}
+		else {
+			Media that = (Media) obj;
+			return this.getTitle() == that.getTitle();
+		}
+	}
 }
