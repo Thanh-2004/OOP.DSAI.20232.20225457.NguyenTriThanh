@@ -1,7 +1,7 @@
 package hust.soict.dsai.aims.cart;
 import java.util.ArrayList;
+import java.util.Collections;
 
-import hust.soict.dsai.aims.media.DigitalVideoDisc;
 import hust.soict.dsai.aims.media.Media;
 
 public class Cart {
@@ -9,6 +9,10 @@ public class Cart {
 
 	
 	private ArrayList<Media> itemsOrdered = new ArrayList<Media>();
+	
+	public ArrayList<Media> getItemsOrdered() {
+		return itemsOrdered;
+	}
 	
 
 	public void addMedia(Media media) {
@@ -91,5 +95,62 @@ public class Cart {
 //		}
 //	}
 	
+	 public void print() {
+		 System.out.println("***********************CART***********************");
+		 System.out.println("Ordered Items:");
+		 for (Media media : itemsOrdered) {
+			 System.out.println(media.toString());
+			}		 
+		 System.out.println("Total cost: " + totalCost());
+	 }
+	 
+	 public void sortCartCostTitle() {
+		 Collections.sort(itemsOrdered, Media.COMPARE_BY_COST_TITLE);
+	 }
+	 public void sortCartTitleCost() {
+		 Collections.sort(itemsOrdered, Media.COMPARE_BY_TITLE_COST);
+	 }
+	 
+	 public void idSearch(int id) {
+		 boolean found = false;
+		 for (Media media : itemsOrdered) {
+			 if (media == null) {
+				 break;
+			 }
+			 else if (media.getId() == id) {
+				 System.out.println("found: " + media.toString());
+				 found = true;
+				 break;
+			 } 
+		 }
+		 if (found == false) {
+			 System.out.println("Empty");
+			 }
+	 }	
+	 
+	 public void titleSearch(String title) {
+		 boolean found = false;
+		 String lowercaseTitle = title.toLowerCase();
+		 for (Media media : itemsOrdered) {
+			 if (media == null) {
+				 break;
+			 }
+			 String[] keywords = lowercaseTitle.split(" ");
+			 String lowercaseDVDTitle = media.getTitle().toLowerCase();
+			 for (String keyword : keywords) {
+			        if (lowercaseDVDTitle.contains(keyword)) {
+			            found = true;
+			            System.out.println("found: " + media.toString());
+			            break;
+			        }
+			    }
+		 }
+
+		 if (found == false) {
+			 System.out.println("Empty");
+			 }
+	 }
+
+
 	
 }

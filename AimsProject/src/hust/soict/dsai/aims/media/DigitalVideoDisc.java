@@ -24,16 +24,17 @@ public class DigitalVideoDisc extends Disc implements Playable{
 		setId(nbDigitalVideoDiscs);
 	}
 	
-	public DigitalVideoDisc(String category, String title, float cost) {
-		super(category, title, cost);
+	public DigitalVideoDisc(String title, String category, float cost) {
+		super(title, category, cost);
 		nbDigitalVideoDiscs += 1;
-		setId(nbDigitalVideoDiscs);
+		setId(nbDigitalVideoDiscs); 
 	}
 	
-	public DigitalVideoDisc(String director, String category, String title, float cost) {
-		super(director,category, title, cost);
+	public DigitalVideoDisc(String title, String category, String director, float cost) {
+		super(title, category, director, cost);
 		nbDigitalVideoDiscs += 1;
-		setId(nbDigitalVideoDiscs);
+		setId(nbDigitalVideoDiscs); 
+
 	}
 	
 	public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
@@ -42,6 +43,9 @@ public class DigitalVideoDisc extends Disc implements Playable{
 		setId(nbDigitalVideoDiscs);
 	}
 	
+	public DigitalVideoDisc(int id, String title, String category, String director, int length, float cost) {
+		super(id, title, category, director, length, cost);
+	}
 	
 //	public String toString() {
 //		return "DVD - " + this.getTitle() + " - " + this.getCategory() + " - " + this.getDirector() + " - " + this.getLength() + ": " + this.getCost() + " $" ;
