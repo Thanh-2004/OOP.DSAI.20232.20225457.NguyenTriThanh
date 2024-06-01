@@ -22,6 +22,15 @@ public class Book extends Media {
 		setCategory(category);
 		setCost(cost);
 	}
+	
+	public Book(String title, String category, float cost) {
+		// TODO Auto-generated constructor stub
+		super();
+		setTitle(title);
+		setCategory(category);
+		setCost(cost);
+	}
+
 
 	public List<String> getAuthors() {
 		return authors;
