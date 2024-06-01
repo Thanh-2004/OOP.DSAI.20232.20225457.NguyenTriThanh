@@ -6,8 +6,11 @@ import hust.soict.dsai.aims.media.Book;
 import hust.soict.dsai.aims.media.CompactDisc;
 import hust.soict.dsai.aims.media.Media;
 import hust.soict.dsai.aims.store.Store;
+import hust.soict.dsai.exception.PlayerException;
 
 import java.util.Scanner;
+
+import javax.naming.LimitExceededException;
 
 public class Aims {
 	public static void showMenu() {
@@ -128,10 +131,24 @@ public class Aims {
 	                            }
 	                            else if(seeDetailsChoice == 2){
 	                                if(item instanceof DigitalVideoDisc){
-	                                    ((DigitalVideoDisc)item).play();
+	                                    try {
+											((DigitalVideoDisc)item).play();
+										} catch (PlayerException e) {
+											// TODO Auto-generated catch block
+											e.getMessage();
+											e.toString();
+											e.printStackTrace();
+										}
 	                                }
 	                                else if(item instanceof CompactDisc){
-	                                    ((CompactDisc)item).play();
+	                                    try {
+											((CompactDisc)item).play();
+										} catch (PlayerException e) {
+											// TODO Auto-generated catch block
+											e.getMessage();
+											e.toString();
+											e.printStackTrace();
+										}
 	                                }
 	                                else{
 	                                    System.out.println("Cannot play this type of media");
@@ -172,10 +189,24 @@ public class Aims {
 	                for (Media item : store.getItemsInStore()) {
 	                    if(item.getTitle().equals(title)){
 	                        if(item instanceof DigitalVideoDisc){
-	                            ((DigitalVideoDisc)item).play();
+	                            try {
+									((DigitalVideoDisc)item).play();
+								} catch (PlayerException e) {
+									// TODO Auto-generated catch block
+									e.getMessage();
+									e.toString();
+									e.printStackTrace();
+								}
 	                        }
 	                        else if(item instanceof CompactDisc){
-	                            ((CompactDisc)item).play();
+	                            try {
+									((CompactDisc)item).play();
+								} catch (PlayerException e) {
+									// TODO Auto-generated catch block
+									e.getMessage();
+									e.toString();
+									e.printStackTrace();
+								}
 	                        }
 	                        else{
 	                            System.out.println("Cannot play this media");
@@ -257,10 +288,24 @@ public class Aims {
 	                        for (Media item : cart.getItemsOrdered()) {
 	                            if(item.getTitle().equals(title)){
 	                                if(item instanceof DigitalVideoDisc){
-	                                    ((DigitalVideoDisc)item).play();
+	                                    try {
+											((DigitalVideoDisc)item).play();
+										} catch (PlayerException e) {
+											// TODO Auto-generated catch block
+											e.getMessage();
+											e.toString();
+											e.printStackTrace();
+										}
 	                                }
 	                                else if(item instanceof CompactDisc){
-	                                    ((CompactDisc)item).play();
+	                                    try {
+											((CompactDisc)item).play();
+										} catch (PlayerException e) {
+											// TODO Auto-generated catch block
+											e.getMessage();
+											e.toString();
+											e.printStackTrace();
+										}
 	                                }
 	                                else{
 	                                    System.out.println("Cannot play this media");
@@ -438,10 +483,25 @@ public class Aims {
                         for (Media item : cart.getItemsOrdered()) {
                             if(item.getTitle().equals(title)){
                                 if(item instanceof DigitalVideoDisc){
-                                    ((DigitalVideoDisc)item).play();
+                                    try {
+										((DigitalVideoDisc)item).play();
+									} catch (PlayerException e) {
+										// TODO Auto-generated catch block
+										e.getMessage();
+										e.toString();
+										e.printStackTrace();
+									}
                                 }
                                 else if(item instanceof CompactDisc){
-                                    ((CompactDisc)item).play();
+                                    try {
+										((CompactDisc)item).play();
+									} catch (PlayerException e) {
+										// TODO Auto-generated catch block
+										e.getMessage();
+										e.toString();
+										e.printStackTrace();
+									}
+
                                 }
                                 else{
                                     System.out.println("Cannot play this media");
